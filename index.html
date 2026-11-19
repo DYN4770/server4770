@@ -282,10 +282,22 @@ header nav .navbtn:active,.page button:active,.page .action:active{transform:tra
 .gold-click-glow{animation:dynGoldClick .72s ease-out!important}@keyframes dynGoldClick{0%{box-shadow:0 0 0 0 rgba(242,205,118,0)}32%{box-shadow:0 0 0 2px rgba(255,226,151,.95),0 0 24px 7px rgba(231,189,104,.66),inset 0 0 16px rgba(255,232,170,.24)}100%{box-shadow:0 0 0 1px rgba(242,205,118,.62),0 0 12px rgba(231,189,104,.28)}}
 @media(prefers-reduced-motion:reduce){header nav .navbtn,.page button,.page .action{transition:none}.gold-click-glow{animation:none!important;box-shadow:0 0 0 2px #f2cd76,0 0 12px rgba(231,189,104,.5)!important}}
 </style>
+<style id="dyn-language-menu-palette">
+#gtranslate_wrapper .gt_selector,#gtranslate_wrapper select{background:linear-gradient(140deg,#34203f,#201329)!important;color:#f6edff!important;border-color:#d1a957!important;color-scheme:dark}
+#gtranslate_wrapper .gt_selector option,#gtranslate_wrapper select option{background-color:#24162f!important;color:#f4eaff!important}
+#gtranslate_wrapper .gt_selector option:checked,#gtranslate_wrapper select option:checked{background-color:#64465e!important;color:#ffe4a0!important}
+</style>
+<style id="dyn-language-gold-purple">
+header nav #gtranslate_wrapper .gt_selector,header nav #gtranslate_wrapper select{background:linear-gradient(140deg,#f0d38a,#d8b15f)!important;color:#2b1838!important;border:2px solid #76509a!important;border-radius:12px!important;box-shadow:0 0 0 1px rgba(231,189,104,.55),inset 0 1px rgba(255,249,220,.52)!important;color-scheme:light}
+header nav #gtranslate_wrapper .gt_selector option,header nav #gtranslate_wrapper select option{background-color:#e8ca7d!important;color:#2d1939!important}
+header nav #gtranslate_wrapper .gt_selector option:checked,header nav #gtranslate_wrapper select option:checked{background-color:#674582!important;color:#ffebaf!important}
+header nav #gtranslate_wrapper .gt_selector:hover,header nav #gtranslate_wrapper select:hover,header nav #gtranslate_wrapper .gt_selector:focus,header nav #gtranslate_wrapper select:focus{border-color:#674582!important;box-shadow:0 0 0 2px rgba(118,80,154,.25),0 0 14px rgba(231,189,104,.3)!important}
+</style>
+<style id="dyn-tagline-style">.brand .brand-sub{font-size:14px;letter-spacing:.045em;color:transparent;background:linear-gradient(180deg,#f1d4ff 0%,#c9a9ed 45%,#e1e7ee 100%);background-size:100% 190%;background-position:50% 0;-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 1px 4px rgba(211,168,239,.24));white-space:nowrap;animation:dynTaglineShimmer 6s ease-in-out infinite}@keyframes dynTaglineShimmer{0%,68%,100%{background-position:50% 0}84%{background-position:50% 100%}}@media(prefers-reduced-motion:reduce){.brand .brand-sub{animation:none}}</style>
 </head>
 <body>
 <header><nav>
-<div class="brand"><span class="brand-mark" role="img" aria-label="DYN logo" title="DYN"><img src="assets/dyn-logo.gif" alt="DYN"></span> <span class="brand-sub">ALLIANCE COMMAND CENTER</span></div>
+<div class="brand"><span class="brand-mark" role="img" aria-label="DYN logo" title="DYN"><img src="assets/dyn-logo.gif" alt="DYN"></span> <span class="brand-sub">United We Rise.</span></div>
 <button class="navbtn active" data-page="home" data-i="home">Home</button>
 <button class="navbtn" data-page="knowledge">WikiWOS</button>
 <button class="navbtn" data-page="events" data-i="events">Events</button>
@@ -346,7 +358,7 @@ header nav .navbtn:active,.page button:active,.page .action:active{transform:tra
 <section id="proposals" class="page hidden"><div class="sectionhead"><h2 data-i="proposaltitle">Community Suggestions</h2><span class="pill public" data-i="openlabel">OPEN TO ALL</span></div><div class="notice" data-i="proposalhint">Anyone can suggest a new guide, correction or event idea. R4/R5 review and approve changes before they become official.</div><div class="card" style="margin-top:14px"><h3 data-i="submitidea">Submit an idea</h3><label data-i="type">Suggestion type</label><select id="ptype" class="field"><option value="New guide">New guide</option><option value="Correction">Correction</option><option value="Event idea">Event idea</option><option value="Alliance plan">Alliance plan</option></select><label data-i="subject">Title</label><input id="psubject" class="field" placeholder="Short title"><label data-i="details">Details</label><textarea id="pdetails" class="field" placeholder="Describe your suggestion..."></textarea><button class="action primary" onclick="submitProposal()" data-i="submit">Send suggestion</button><p class="status" id="submitstatus"></p></div><div class="sectionhead"><h2 data-i="queue">Suggestion queue (local demo)</h2></div><div id="queue" class="grid"></div></section>
 
 <section id="giftcenter" class="page hidden">
-<div class="sectionhead"><div><span class="eyebrow">WHITEOUT SURVIVAL · DYN</span><h2>DYN GIFT CODE CENTER</h2><p class="muted" data-gift="intro">Current codes, simple copy, and a link to the official WOS portal.</p></div><div class="toolbar"><button class="action" type="button" onclick="setGiftLang('en')">English</button><button class="action" type="button" onclick="setGiftLang('pl')">Polski</button></div></div>
+<div class="sectionhead"><div><span class="eyebrow">WHITEOUT SURVIVAL · DYN</span><h2>DYN GIFT CODE CENTER</h2><p class="muted" data-gift="intro">Current codes, simple copy, and a link to the official WOS portal.</p></div></div>
 <div id="gift-banner" class="notice hidden" role="status"></div><p class="muted" id="gift-last-update"></p>
 <div class="gift-simple-layout"><div class="card"><h3 data-gift="activeCodes">Current codes</h3><p class="muted" data-gift="copyHint">Copy a code here, then paste it into the official portal.</p><div id="gift-active-list" class="grid"></div><p id="gift-copy-message" class="status" aria-live="polite"></p><a class="action primary" href="https://wos-giftcode.centurygame.com/" target="_blank" rel="noopener noreferrer" data-gift="officialPortal">Open official WOS gift-code portal ↗</a></div>
 <div class="card"><h3 data-gift="submitTitle">Report a code</h3><p class="muted" data-gift="submitHint">Reports open a public GitHub review form. You can leave the expiry date blank if it is unknown.</p><label for="gift-report-code" data-gift="codeLabel">Gift code</label><input id="gift-report-code" class="field" maxlength="80" autocomplete="off"><label for="gift-report-expiry" data-gift="expiryLabel">Valid until (optional)</label><input id="gift-report-expiry" class="field" type="date"><button class="action primary" id="gift-report-submit" type="button" data-gift="reportSubmit">Prepare code report</button><p id="gift-report-message" class="status" aria-live="polite"></p></div></div>
@@ -861,6 +873,8 @@ async function copyText(value) {
   let copied = false; try { copied = document.execCommand("copy"); } catch {} field.remove(); return copied;
 }
 function setGiftLang(language) { giftLang = language === "pl" ? "pl" : "en"; renderGiftCenter(); document.querySelector("#gift-copy-message").textContent = ""; document.querySelector("#gift-report-message").textContent = ""; }
+function connectGiftLanguageSelector(){const selector=document.querySelector("#gtranslate_wrapper select");if(selector&&!selector.dataset.dynGiftLangBound){selector.dataset.dynGiftLangBound="1";selector.addEventListener("change",()=>setGiftLang(selector.value));setGiftLang(selector.value)} }
+const giftLanguageWrapper=document.querySelector("#gtranslate_wrapper");if(giftLanguageWrapper){new MutationObserver(connectGiftLanguageSelector).observe(giftLanguageWrapper,{childList:true,subtree:true});connectGiftLanguageSelector()}
 async function syncPublishedGiftCatalog() {
   try {
     const response = await fetch(`gift-codes.json?refresh=${Date.now()}`, { cache: "no-store" }); if (!response.ok) throw Error();
