@@ -1,4 +1,4 @@
-Version 1.72 makes the animated DYN header logo compact so it fits cleanly beside the site title.
+Version 1.79 updates the header tagline to “United We Rise.” with a subtle shadow.
 
 Version 1.69 reduces the Gift Code Center to active codes and the two newest expired entries by default. Expired cards are display-only; local maintenance controls are tucked away.
 
@@ -13,17 +13,11 @@ The event details are cross-checked against the linked community references insi
 
 Version 1.67 carries the v1.66 Gift Code Center forward and loads a dated snapshot from the public WOS Rewards catalog: 3 codes listed live and 363 archived codes, checked 19 Nov 2026. Each entry keeps its original letter case, source URL, listing date and import audit note. The page loads the bundled gift-codes.json from the same static site. The catalog is a snapshot and does not refresh itself; compare the linked WOS Rewards and Digital Revenue Studio trackers before publishing future updates. External status labels are reports, not confirmation from the game.
 
-STATIC-HOSTING WORKFLOW
-- Replace the published gift-codes.json to update the catalog for every visitor; their page loads the current file and shows a banner for newly added codes.
-- Suggestions and edits stay in that browser. Export submissions, import them on the maintainer device, review/approve, export gift-codes.json, and publish it beside index.html.
-- This local editor does not provide secure sign-in or appointed-user authentication. With static hosting and no server, publishing through the hosting account is the access control. Do not treat the local editor as a secure public admin panel.
-- No authorized game API is available in this package. The page copies codes and opens the official portal; redemption is not reported as successful without game confirmation.
-- The included catalog is a dated snapshot from WOS Rewards. Trackers can disagree, so codes are marked as reported active and the DYN page links to both source trackers. Update the JSON snapshot manually when reviewing later codes.
-UPLOAD:
-1. Extract this ZIP.
-2. Upload index.html, gift-codes.json, and the complete assets folder to the ROOT of your GitHub Pages repository.
-3. Commit changes.
-4. Keep index.html, gift-codes.json and assets at the same level.
+GIFT CODE CENTER WORKFLOW
+- Current codes load from gift-codes.json beside index.html. Update that file and publish it to refresh the public list.
+- Copy buttons copy one code to this browser's clipboard. Paste it manually in the official WOS portal; the page cannot send a Player ID or redeem codes for you.
+- Code reports open a prefilled public GitHub Issue. The person reporting must review and submit it and needs a GitHub account. Review reports before adding codes to gift-codes.json.
+- This is a static website and does not have a private submission server or an authorized WOS redemption API.
 
 GTranslate requires internet access and remains subject to the provider's terms.
 
@@ -133,12 +127,23 @@ Version 1.65 introduces the custom DYN Frost Star brand mark: an icy crystal sta
 Version 1.66 builds a self-contained Gift Code Center on the v1.65 site and includes the published static catalog file gift-codes.json.
 
 
-Wersja v1.71: przygotowana do publikacji na stronie. Logo DYN jest używane w nagłówku i jako ikona karty przeglądarki. Przy Sunfire Castle usunięto małą flagę, a karty Bear Trap przywrócono do oryginalnej fioletowej palety DYN.
 
 
-Wersja v1.71: przygotowana do publikacji na stronie. Logo DYN jest używane w nagłówku i jako ikona karty przeglądarki. Przy Sunfire Castle usunięto małą flagę, a karty Bear Trap przywrócono do oryginalnej fioletowej palety DYN.
 
 
-Wersja v1.71: przygotowana do publikacji na stronie. Logo DYN jest używane w nagłówku i jako ikona karty przeglądarki. Przy Sunfire Castle usunięto małą flagę, a karty Bear Trap przywrócono do oryginalnej fioletowej palety DYN.
 
-Wersja v1.72: zmniejszono animowane logo w nagłówku do kompaktowego rozmiaru, aby nie nachodziło na nazwę strony.
+
+
+
+
+Wersja v1.74: uproszczony Gift Code Center pokazuje aktualne kody, pozwala je kopiować i prowadzi do oficjalnego portalu WOS. Zgłoszenie kodu otwiera publiczny formularz GitHub Issues z opcjonalną datą ważności.
+
+Wersja v1.75: poprawiona kolejność menu, nazwa WikiWOS, złoto-fioletowy selektor języka oraz złote obramowania i poświata kliknięcia dla przycisków sekcji.
+
+Wersja v1.76: zmiana kolorów rozwijanej listy języków na śliwkowe tło ze złotym zaznaczeniem; lista języków bez zmian.
+
+Wersja v1.77: selektor języka ma złote tło i fioletową ramkę oraz fioletowe zaznaczenie opcji.
+
+Wersja v1.78: usunięto dodatkowe przyciski języka z Gift Codes; sekcja korzysta z głównego selektora języka strony.
+
+Wersja v1.79: hasło w nagłówku zmieniono na „United We Rise.” i dodano delikatny cień.
