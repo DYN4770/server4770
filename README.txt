@@ -1,4 +1,4 @@
-Version 1.79 updates the header tagline to “United We Rise.” with a subtle shadow.
+Version 1.87 adds original DYN Alliance & R4/R5 copy-ready message templates and quick reference sheets, in English and Polish.
 
 Version 1.69 reduces the Gift Code Center to active codes and the two newest expired entries by default. Expired cards are display-only; local maintenance controls are tucked away.
 
@@ -147,3 +147,19 @@ Wersja v1.77: selektor języka ma złote tło i fioletową ramkę oraz fioletowe
 Wersja v1.78: usunięto dodatkowe przyciski języka z Gift Codes; sekcja korzysta z głównego selektora języka strony.
 
 Wersja v1.79: hasło w nagłówku zmieniono na „United We Rise.” i dodano delikatny cień.
+
+Wersja v1.80: hasło w nagłówku zmieniono na „Built to Win.”, zachowując liliowo-srebrny gradient i delikatne mienienie.
+
+Wersja v1.81: „United We Rise.” wraca obok logo, a tytuł główny strony zmienia się na „Built to Win.” w liliowo-srebrnym, delikatnie mieniącym się stylu.
+
+Wersja v1.82: usunięto wskazane dodatkowe teksty, poprawiono czytelność Gift Codes i uzupełniono przypisane role w Alliance Space.
+
+Wersja v1.83: usunięto dodatkowy opis nad formularzem zgłoszenia kodu.
+
+Wersja v1.84: wzmocniono hierarchię nagłówka Gift Code Center, przeniesiono małą datę aktualizacji pod kody i sformatowano ją lokalnie bez zapisu ISO.
+
+Wersja v1.85: wyśrodkowano opisy i liczniki Bear Trap w kartach, pozostawiając ustawienia w prawym górnym rogu.
+
+Wersja v1.86: przywrócono poprzedni układ kart Bear Trap.
+
+Wersja v1.87: dodano własne szablony wiadomości i krótkie ściągi DYN dla sojuszu oraz R4/R5, z kopiowaniem jednym kliknięciem.
