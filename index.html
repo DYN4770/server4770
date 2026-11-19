@@ -272,18 +272,30 @@ header{background:rgba(16,9,26,.96);border-bottom-color:#493457}
 #giftcenter details>summary{color:#d5b4f4}
 </style>
 <style id="gift-center-simple-style">.gift-simple-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.8fr);gap:16px;margin-top:18px}.gift-simple-layout>.card{padding:20px}.gift-simple-layout label{display:block;margin-top:12px}.gift-simple-layout .field{margin-top:6px}.gift-simple-layout #gift-active-list{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}.gift-simple-card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border:1px solid #58406f;border-radius:14px;background:linear-gradient(145deg,#261737,#1a1029)}.gift-simple-card code{font-size:20px;font-weight:850;letter-spacing:.06em;overflow-wrap:anywhere;color:#f0e7ff}.gift-simple-card .action{flex:none}.gift-simple-layout .action.primary{display:inline-flex;align-items:center;margin-top:14px;text-decoration:none}@media(max-width:760px){.gift-simple-layout{grid-template-columns:1fr}.gift-simple-layout #gift-active-list{grid-template-columns:1fr}}</style>
+<style id="dyn-gold-click-style">
+header nav .navbtn,header nav .lang,header nav #gtranslate_wrapper select,.page button,.page .action{border:1px solid #a47b40!important;background:linear-gradient(135deg,#281a36,#1d122b)!important;color:#f4eaff!important;transition:color .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease,transform .12s ease}
+header nav .lang,header nav #gtranslate_wrapper select{background:linear-gradient(135deg,#302039,#24162f)!important;border-color:#c69b4f!important;box-shadow:inset 0 0 14px rgba(231,189,104,.08)}
+header nav .navbtn:hover,header nav .lang:hover,header nav #gtranslate_wrapper select:hover,header nav .navbtn.active,.page button:hover,.page .action:hover{border-color:#f2cd76!important;box-shadow:0 0 0 1px rgba(242,205,118,.75),0 0 16px rgba(231,189,104,.28),inset 0 0 12px rgba(231,189,104,.08)}
+header nav .navbtn.active{background:linear-gradient(135deg,#49324b,#2f1d3c)!important;color:#ffe7a8!important}
+header nav .navbtn:focus-visible,header nav .lang:focus-visible,header nav #gtranslate_wrapper select:focus-visible,.page button:focus-visible,.page .action:focus-visible{outline:2px solid #f2cd76!important;outline-offset:2px;box-shadow:0 0 0 3px rgba(242,205,118,.25),0 0 18px rgba(231,189,104,.42)!important}
+header nav .navbtn:active,.page button:active,.page .action:active{transform:translateY(1px) scale(.98)}
+.gold-click-glow{animation:dynGoldClick .72s ease-out!important}@keyframes dynGoldClick{0%{box-shadow:0 0 0 0 rgba(242,205,118,0)}32%{box-shadow:0 0 0 2px rgba(255,226,151,.95),0 0 24px 7px rgba(231,189,104,.66),inset 0 0 16px rgba(255,232,170,.24)}100%{box-shadow:0 0 0 1px rgba(242,205,118,.62),0 0 12px rgba(231,189,104,.28)}}
+@media(prefers-reduced-motion:reduce){header nav .navbtn,.page button,.page .action{transition:none}.gold-click-glow{animation:none!important;box-shadow:0 0 0 2px #f2cd76,0 0 12px rgba(231,189,104,.5)!important}}
+</style>
 </head>
 <body>
 <header><nav>
 <div class="brand"><span class="brand-mark" role="img" aria-label="DYN logo" title="DYN"><img src="assets/dyn-logo.gif" alt="DYN"></span> <span class="brand-sub">ALLIANCE COMMAND CENTER</span></div>
 <button class="navbtn active" data-page="home" data-i="home">Home</button>
-<button class="navbtn" data-page="knowledge" data-i="knowledge">Knowledge</button> <button class="navbtn" data-page="heroes">Hero Database</button>
+<button class="navbtn" data-page="knowledge">WikiWOS</button>
 <button class="navbtn" data-page="events" data-i="events">Events</button>
+<button class="navbtn" data-page="heroes">Heroes</button>
+<button class="navbtn" data-page="giftcenter" data-gift="giftNav">🎁 Gifts</button>
 <button class="navbtn" data-page="alliance" data-i="alliance">Alliance Space</button>
 <button class="navbtn" data-page="proposals" data-i="proposals">Suggestions</button>
-<button class="navbtn" data-page="giftcenter" data-gift="giftNav">🎁 Gift Codes</button>
 <div id="gtranslate_wrapper" aria-label="Choose website language"></div>
 <select class="lang" id="language" aria-label="Language" hidden><option value="en">🇬🇧 English</option><option value="pl">🇵🇱 Polski</option><option value="ar">🇸🇦 العربية</option><option value="ko">🇰🇷 한국어</option></select>
+
 </nav></header>
 <main>
 <section id="home" class="page">
@@ -820,8 +832,8 @@ const GIFT_REPORT_URL = "https://github.com/DYN4770/server4770/issues/new";
 let giftLang = "en";
 let giftCatalog = [];
 const GIFT_TEXT = {
-  en: { intro: "Current codes, simple copy, and a link to the official WOS portal.", activeCodes: "Current codes", copyHint: "Copy a code here, then paste it into the official portal.", copy: "Copy", officialPortal: "Open official WOS gift-code portal ↗", submitTitle: "Report a code", submitHint: "Reports open a public GitHub review form. You can leave the expiry date blank if it is unknown.", codeLabel: "Gift code", expiryLabel: "Valid until (optional)", reportSubmit: "Prepare code report", empty: "No current codes are listed.", copied: "Code copied. Paste it into the official portal and complete redemption there.", copyFailed: "Could not copy automatically. Select the code and copy it manually.", enterCode: "Enter a gift code first.", reportReady: "Review the report in the new GitHub tab and submit it there. A GitHub account is required; reports are public.", loadError: "Could not load the current code list." },
-  pl: { intro: "Aktualne kody, kopiowanie i link do oficjalnego portalu WOS.", activeCodes: "Aktualne kody", copyHint: "Skopiuj tu kod, a następnie wklej go w oficjalnym portalu.", copy: "Kopiuj", officialPortal: "Otwórz oficjalny portal kodów WOS ↗", submitTitle: "Zgłoś kod", submitHint: "Zgłoszenie otworzy publiczny formularz GitHuba. Datę ważności zostaw pustą, jeśli jest nieznana.", codeLabel: "Kod prezentowy", expiryLabel: "Ważny do (opcjonalnie)", reportSubmit: "Przygotuj zgłoszenie kodu", empty: "Brak aktualnych kodów na liście.", copied: "Kod skopiowany. Wklej go w oficjalnym portalu i dokończ odbiór tam.", copyFailed: "Nie udało się skopiować automatycznie. Zaznacz kod i skopiuj go ręcznie.", enterCode: "Najpierw wpisz kod.", reportReady: "Sprawdź zgłoszenie w nowej karcie GitHuba i wyślij je tam. Wymagane jest konto GitHub; zgłoszenia są publiczne.", loadError: "Nie udało się wczytać aktualnej listy kodów." }
+  en: { giftNav: "🎁 Gifts", intro: "Current codes, simple copy, and a link to the official WOS portal.", activeCodes: "Current codes", copyHint: "Copy a code here, then paste it into the official portal.", copy: "Copy", officialPortal: "Open official WOS gift-code portal ↗", submitTitle: "Report a code", submitHint: "Reports open a public GitHub review form. You can leave the expiry date blank if it is unknown.", codeLabel: "Gift code", expiryLabel: "Valid until (optional)", reportSubmit: "Prepare code report", empty: "No current codes are listed.", copied: "Code copied. Paste it into the official portal and complete redemption there.", copyFailed: "Could not copy automatically. Select the code and copy it manually.", enterCode: "Enter a gift code first.", reportReady: "Review the report in the new GitHub tab and submit it there. A GitHub account is required; reports are public.", loadError: "Could not load the current code list." },
+  pl: { giftNav: "🎁 Prezenty", intro: "Aktualne kody, kopiowanie i link do oficjalnego portalu WOS.", activeCodes: "Aktualne kody", copyHint: "Skopiuj tu kod, a następnie wklej go w oficjalnym portalu.", copy: "Kopiuj", officialPortal: "Otwórz oficjalny portal kodów WOS ↗", submitTitle: "Zgłoś kod", submitHint: "Zgłoszenie otworzy publiczny formularz GitHuba. Datę ważności zostaw pustą, jeśli jest nieznana.", codeLabel: "Kod prezentowy", expiryLabel: "Ważny do (opcjonalnie)", reportSubmit: "Przygotuj zgłoszenie kodu", empty: "Brak aktualnych kodów na liście.", copied: "Kod skopiowany. Wklej go w oficjalnym portalu i dokończ odbiór tam.", copyFailed: "Nie udało się skopiować automatycznie. Zaznacz kod i skopiuj go ręcznie.", enterCode: "Najpierw wpisz kod.", reportReady: "Sprawdź zgłoszenie w nowej karcie GitHuba i wyślij je tam. Wymagane jest konto GitHub; zgłoszenia są publiczne.", loadError: "Nie udało się wczytać aktualnej listy kodów." }
 };
 
 function gt(key) { return GIFT_TEXT[giftLang][key] || GIFT_TEXT.en[key] || key; }
@@ -904,6 +916,7 @@ function renderHeroDatabase(){
 }
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",initHeroDatabase,{once:true});}else{initHeroDatabase();}
 </script>
+<script id="dyn-gold-click-handler">document.addEventListener('click',function(event){const control=event.target.closest('header nav button,header nav select,.page button,.page .action');if(!control||control.disabled)return;control.classList.remove('gold-click-glow');void control.offsetWidth;control.classList.add('gold-click-glow');window.setTimeout(()=>control.classList.remove('gold-click-glow'),760)});</script>
 </body></html>
 
 
